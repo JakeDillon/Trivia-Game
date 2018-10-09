@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hXU-aj-U3q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Epic Trivia Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Trivia_Game" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,33 +17,116 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFs-CE-mpJ">
-                                <rect key="frame" x="63" y="41" width="253" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhw-gd-8Fg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qhw-gd-8Fg">
                                 <rect key="frame" x="16" y="617" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbj-bI-Kee"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qts-kv-Pdw">
+                                <rect key="frame" x="20" y="136" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wA0-0g-m7E">
+                                <rect key="frame" x="78" y="136" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iu1-IM-tG6">
+                                <rect key="frame" x="132" y="192" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JVo-fu-DsD">
+                                <rect key="frame" x="165" y="437" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J8t-th-iOu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lS1-eI-mBA">
+                                <rect key="frame" x="165" y="494" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Via-7F-Cem"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4K-bn-Akn">
+                                <rect key="frame" x="164" y="551" width="47" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZwM-z5-xUK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qx-6S-Xxn">
+                                <rect key="frame" x="165" y="390" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pwq-zA-GYu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qhw-gd-8Fg" secondAttribute="bottom" constant="20" symbolic="YES" id="3w1-Mg-zQz"/>
+                            <constraint firstItem="wA0-0g-m7E" firstAttribute="leading" secondItem="qts-kv-Pdw" secondAttribute="trailing" constant="8" symbolic="YES" id="6Wv-80-whz"/>
+                            <constraint firstItem="JVo-fu-DsD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="165" id="DSg-jp-h7z"/>
+                            <constraint firstItem="Iu1-IM-tG6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="116" id="H9C-II-mRF"/>
+                            <constraint firstItem="lS1-eI-mBA" firstAttribute="top" secondItem="JVo-fu-DsD" secondAttribute="bottom" constant="27" id="Jyb-ad-rdR"/>
+                            <constraint firstItem="qhw-gd-8Fg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="KtS-hd-CqT"/>
+                            <constraint firstItem="T4K-bn-Akn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="164" id="LOn-qQ-fsD"/>
+                            <constraint firstItem="lS1-eI-mBA" firstAttribute="top" secondItem="JVo-fu-DsD" secondAttribute="bottom" constant="27" id="U9b-yM-7ON"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="T4K-bn-Akn" secondAttribute="bottom" constant="86" id="YkE-cO-bKd"/>
+                            <constraint firstItem="lS1-eI-mBA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="165" id="Zcp-ck-VaA"/>
+                            <constraint firstItem="T4K-bn-Akn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aLh-B3-qFp"/>
+                            <constraint firstItem="wA0-0g-m7E" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="mXX-Jf-d7d"/>
+                            <constraint firstItem="1qx-6S-Xxn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="165" id="mZb-3l-Mqe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Iu1-IM-tG6" secondAttribute="trailing" constant="123" id="oSG-GS-iME"/>
+                            <constraint firstItem="JVo-fu-DsD" firstAttribute="top" secondItem="1qx-6S-Xxn" secondAttribute="bottom" constant="17" id="qe4-VF-SQI"/>
+                            <constraint firstItem="qts-kv-Pdw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="shY-Q2-kIK"/>
+                            <constraint firstItem="Iu1-IM-tG6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="76" id="tXJ-r5-ZHM"/>
+                            <constraint firstItem="qts-kv-Pdw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tcS-Wt-31J"/>
+                            <constraint firstItem="T4K-bn-Akn" firstAttribute="top" secondItem="lS1-eI-mBA" secondAttribute="bottom" constant="27" id="wgg-Ff-mm8"/>
+                            <constraint firstItem="Iu1-IM-tG6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="z1C-SN-0AI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Epic Trivia Game" id="Pap-lc-NlR"/>
                     <connections>
+                        <outlet property="answerFour" destination="T4K-bn-Akn" id="kGE-Zi-C5k"/>
+                        <outlet property="answerOne" destination="1qx-6S-Xxn" id="yS5-Co-tlU"/>
+                        <outlet property="answerThree" destination="lS1-eI-mBA" id="cbd-Bk-Ygj"/>
+                        <outlet property="answerTwo" destination="JVo-fu-DsD" id="izU-fs-hGq"/>
+                        <outlet property="displayScore" destination="wA0-0g-m7E" id="23p-g1-7vZ"/>
                         <outlet property="resetButton" destination="qhw-gd-8Fg" id="tIy-qL-Gky"/>
-                        <outlet property="triviaLabel" destination="sFs-CE-mpJ" id="86O-H8-E0f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+            <point key="canvasLocation" x="2015.2" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Yc-0p-Puc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hXU-aj-U3q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="WZW-Wj-MFM">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1CA-gt-BN1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22Q-HG-B0W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

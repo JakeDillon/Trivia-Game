@@ -10,14 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var triviaLabel: UILabel!
     
+    
+    @IBOutlet weak var displayScore: UILabel!
     @IBOutlet weak var resetButton: UIButton!
-   
+    @IBOutlet weak var answerOne: UIButton!
+    @IBOutlet weak var answerTwo: UIButton!
+    @IBOutlet weak var answerThree: UIButton!
+    @IBOutlet weak var answerFour: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-   triviaLabel.text = "Welcome to the Trviva Game"
+   
     resetButton.setTitle("reset", for: .normal)
     }
 
@@ -25,6 +30,9 @@ class ViewController: UIViewController {
         let newGame = true
         if newGame == true {
     }
+    }
+    
+    @IBAction func answeruButtonTapped(_ sender: Any) {
     }
 }
 
