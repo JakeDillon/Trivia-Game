@@ -18,8 +18,10 @@ class TriviaQuestion {
     // Store the index of the correct answers in the answers array
     let correctAnswersIndex: Int
 
-    // computed 
-    
+    // computed property that returns the correct answer for the trivia question
+    var correctAnswer: String {
+        return answers[correctAnswersIndex]
+    }
     
     init (question: String, answers: [String], correctAnswerIndex: Int) {
         self.question = question

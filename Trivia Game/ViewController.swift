@@ -71,12 +71,16 @@ class ViewController: UIViewController {
         let questionTen = TriviaQuestion(question: "Who was the original bass player for the band Five Finger Death Punch", answers: ["Kris Kael", "Geddy Lee", "Matt Snell", "Flea"], correctAnswerIndex: 2)
         let questionEleven = TriviaQuestion(question: "What was the name of the famous guitar player for Pantera that was shot and killed on stage in 2004?", answers: ["Jason Hook", "Tommy Shaw", "Mick Mars", "Darrell Abbott"], correctAnswerIndex: 3)
         let questionTwelve = TriviaQuestion(question: "What was the first studio album released by AC/DC? ", answers: ["T.N.T.", "For Those About To Rock", "Who Made Who", "Powerage"], correctAnswerIndex: 0)
-        let questionThirteen = TriviaQuestion(question: "Who was Ozzy Osbourne's replacement when left Black Sabbath?", answers: ["Ted Nuggent", "Ronnie James Dio", "Dennis Deyoung", "Bon Scott"], correctAnswerIndex: 1)
-        let questionForteen = TriviaQuestion(question: "What bands makes up The Big Four of thrash metal bands?", answers: ["Hatebreed, In This Moment, Judist Priest, Amon Amarth", "Black Veil Brides, Pierce the Veil, Falling in Reverse, We Came as Romans", "Slayer, Metallica, Anthrax, Megadeth", "Testament, Exodus, Testament, Overkill"], correctAnswerIndex: 2)
+        let questionThirteen = TriviaQuestion(question: "Who was Ozzy Osbourne's replacement when he left Black Sabbath?", answers: ["Ted Nuggent", "Ronnie James Dio", "Dennis Deyoung", "Bon Scott"], correctAnswerIndex: 1)
+        let questionForteen = TriviaQuestion(question: "What bands makes up The Big Four of thrash metal bands?", answers: ["Hatebreed, Kreator, Seplultura, Pantera", "Sodom, Venom, Voivod, Death", "Slayer, Metallica, Anthrax, Megadeth", "Testament, Exodus, Testament, Overkill"], correctAnswerIndex: 2)
         let questionFifteen = TriviaQuestion(question: "How many members are in the band Slipknot?", answers: ["three", "seven", "ten", "nine"], correctAnswerIndex: 3)
-        let questionSixteen = TriviaQuestion(question: "The band Volbet is from what country?", answers: ["Brazil", "England", "USA", "Denmark"], correctAnswerIndex: 3)
+        let questionSixteen = TriviaQuestion(question: "The band Volbeat is from what country?", answers: ["Brazil", "England", "USA", "Denmark"], correctAnswerIndex: 3)
+        let questionSeventeen = TriviaQuestion(question: "What was the name of the band formed by Sebastian Bach and later kicked out of?", answers: ["Styx", "Quiet Riot", "Skid Row", "Sabaton"], correctAnswerIndex: 2)
+        let questionEighteen = TriviaQuestion(question: "Of Mice and Men lead singer Aaron Pauley plays what instrument?", answers: ["drums", "guitar", "turntable", "bass guitar"], correctAnswerIndex: 3)
+        let questionNineteen = TriviaQuestion(question: "In 1982 Iron Maiden released what album?", answers: ["Picee of Mind", "Iron Maiden", "The Number of the Beast", "Killers"], correctAnswerIndex: 2)
+        let questionTwenty = TriviaQuestion(question: "What is Marilyn Manson's real name?", answers: ["Brian Warner", "Craig Smith", "Danny Johnson", "Sully Erna"], correctAnswerIndex: 0)
         
-        questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen, questionEleven, questionTwelve, questionThirteen, questionForteen, questionFifteen, questionSixteen]
+        questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen, questionEleven, questionTwelve, questionThirteen, questionForteen, questionFifteen, questionSixteen, questionSeventeen, questionEighteen, questionNineteen, questionTwenty]
     }
     
     // this function will be used to get a random question from our array of questions
@@ -89,13 +93,13 @@ class ViewController: UIViewController {
         
         currentQuestions = questions[randomIndex]
     } else {
-        resetGame()
+        resetGameAlert()
     
     }
     }
     
     func showCorrectAnswerAlert() {
-        let correctAlert = UIAlertController(title: "correct", message: "(currentQuestions.correctAnswer) was the correct answer", preferredStyle: .actionSheet)
+        let correctAlert = UIAlertController(title: "correct", message: "\(currentQuestions.correctAnswer) was the correct answer", preferredStyle: .actionSheet)
         let closeAction = UIAlertAction(title: "close", style: .default) { _ in
             self.questionPlaceHolder.append(self.questions.remove(at: self.randomIndex))
             self.getNewQuestion()
@@ -104,12 +108,12 @@ class ViewController: UIViewController {
         self.present(correctAlert, animated: true, completion: nil)
     }
     func showIncorrectAnswerAlert() {
-        let incorrectAlert = UIAlertController(title: "wrong", message: "(currentQuestions.correctAnswer) was the correct answer", preferredStyle: .actionSheet)
-        let closeAction = UIAlertAction(title: "close", style: .default) { _ in
+        let incorrectAlert = UIAlertController(title: "wrong", message: "\(currentQuestions.correctAnswer) was the correct answer", preferredStyle: .actionSheet)
+        let closeAction2 = UIAlertAction(title: "close", style: .default) { _ in
             self.questionPlaceHolder.append(self.questions.remove(at: self.randomIndex))
             self.getNewQuestion()
         }
-        incorrectAlert.addAction(closeAction)
+        incorrectAlert.addAction(closeAction2)
         self.present(incorrectAlert, animated: true, completion: nil)
     }
     
@@ -128,13 +132,11 @@ class ViewController: UIViewController {
     
     // restart button function
     @IBAction func resetButton(_ sender: Any) {
-        let newGame = true
-        if newGame == true {
-        }
+        resetGame()
     }
     
     // answer button function
-    @IBAction func answeruButtonTapped(_ sender: UIButton) {
+    @IBAction func answerButtonTapped(_ sender: UIButton) {
         if sender.tag == currentQuestions.correctAnswersIndex {
             //they got the question right so need to let them know
             showCorrectAnswerAlert()
@@ -145,5 +147,23 @@ class ViewController: UIViewController {
         }
         
     }
+   // shows when game is over and displays score
+    func resetGameAlert() {
+        let resetAlert = UIAlertController(title: "game stats", message: "Game Over, your score was \(score) out of \(questionPlaceHolder.count), do you wanna play again?", preferredStyle: .actionSheet)
+        let yesAction = UIAlertAction(title: "yes", style: .default) {
+            _ in self.resetGame()
+        }
+        
+        
+        resetAlert.addAction(yesAction)
+        
+        
+        self.present(resetAlert, animated: true, completion: nil)
+    }
+    @IBAction func unwindToQuizScreen(seque: UIStoryboardSegue) {
+        
+    }
+
+
 }
 
