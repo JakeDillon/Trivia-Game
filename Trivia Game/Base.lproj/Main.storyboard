@@ -275,9 +275,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GDv-kH-5lH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gvi-AO-FJ6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="gvi-AO-FJ6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" cocoaTouchSystemColor="darkTextColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
