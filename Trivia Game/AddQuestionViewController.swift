@@ -44,7 +44,7 @@ class AddQuestionViewController: UIViewController {
     
     func showErrorAlert() {
         let errorAlert = UIAlertController(title: "Error", message: "Please enter text in all fields, or hit the back button to go back to the quiz.", preferredStyle: .actionSheet)
-        let dismissAction = UIAlertAction(title: "CLose", style: .default, handler: nil)
+        let dismissAction = UIAlertAction(title: "Close", style: .default, handler: nil)
         errorAlert.addAction(dismissAction)
         self.present(errorAlert, animated: true, completion: nil)
     }
